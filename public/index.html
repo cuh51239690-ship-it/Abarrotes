@@ -52,6 +52,39 @@
         </div>
     </header>
 
+    <!-- Icono del carrito -->
+<div class="cart-icon" id="cartIcon">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</div>
+
+<!-- Modal del carrito -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+        <div class="cart-header">
+            <h2>🛒 Tu Carrito de Compras</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Los items del carrito aparecerán aquí -->
+            <div class="empty-cart" id="emptyCart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Tu carrito está vacío</p>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-secondary" id="clearCart">Vaciar Carrito</button>
+                <button class="btn btn-primary" id="checkout">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Resto de tu contenido HTML... -->
     <div class="carousel">
         <div class="carousel-inner">
@@ -107,61 +140,61 @@
         </div>
     </section>
 
-    <!-- Productos destacados -->
-    <section class="products">
-        <div class="container">
-            <h2 class="section-title">Productos Destacados</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Frutas y verduras">
-                    </div>
-                    <div class="product-info">
-                        <h3>Canasta de Frutas</h3>
-                        <p>Selección de frutas de temporada</p>
-                        <div class="product-price">$12.99</div>
-                        <a href="#" class="btn">Agregar al carrito</a>
-                    </div>
+<!-- Productos destacados -->
+<section class="products">
+    <div class="container">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="product-grid">
+            <div class="product-card" data-product-id="1">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Frutas y verduras">
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://fanser.com/wp-content/uploads/2022/01/proceso-de-enlatado.jpg" alt="Productos enlatados">
-                    </div>
-                    <div class="product-info">
-                        <h3>Variedad de Enlatados</h3>
-                        <p>Conservas de la mejor calidad</p>
-                        <div class="product-price">$8.50</div>
-                        <a href="#" class="btn">Agregar al carrito</a>
-                    </div>
+                <div class="product-info">
+                    <h3>Canasta de Frutas</h3>
+                    <p>Selección de frutas de temporada</p>
+                    <div class="product-price">$12.99</div>
+                    <a href="#" class="btn add-to-cart" data-product-id="1">Agregar al carrito</a>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://static.wixstatic.com/media/7d0865_7b79ab5e9a8442fbad9291d98219287c~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/7d0865_7b79ab5e9a8442fbad9291d98219287c~mv2.jpg" alt="Granos básicos">
-                    </div>
-                    <div class="product-info">
-                        <h3>Granos y Semillas</h3>
-                        <p>Arroz, frijol, lentejas y más</p>
-                        <div class="product-price">$6.75</div>
-                        <a href="#" class="btn">Agregar al carrito</a>
-                    </div>
+            </div>
+            
+            <div class="product-card" data-product-id="2">
+                <div class="product-img">
+                    <img src="https://fanser.com/wp-content/uploads/2022/01/proceso-de-enlatado.jpg" alt="Productos enlatados">
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://www.webconsultas.com/sites/default/files/styles/wch_image_schema/public/media/0d/articulos/productos-lacteos.jpg" alt="Lácteos">
-                    </div>
-                    <div class="product-info">
-                        <h3>Productos Lácteos</h3>
-                        <p>Leche, queso, yogur y mantequilla</p>
-                        <div class="product-price">$10.25</div>
-                        <a href="#" class="btn">Agregar al carrito</a>
-                    </div>
+                <div class="product-info">
+                    <h3>Variedad de Enlatados</h3>
+                    <p>Conservas de la mejor calidad</p>
+                    <div class="product-price">$8.50</div>
+                    <a href="#" class="btn add-to-cart" data-product-id="2">Agregar al carrito</a>
+                </div>
+            </div>
+            
+            <div class="product-card" data-product-id="3">
+                <div class="product-img">
+                    <img src="https://static.wixstatic.com/media/7d0865_7b79ab5e9a8442fbad9291d98219287c~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/7d0865_7b79ab5e9a8442fbad9291d98219287c~mv2.jpg" alt="Granos básicos">
+                </div>
+                <div class="product-info">
+                    <h3>Granos y Semillas</h3>
+                    <p>Arroz, frijol, lentejas y más</p>
+                    <div class="product-price">$6.75</div>
+                    <a href="#" class="btn add-to-cart" data-product-id="3">Agregar al carrito</a>
+                </div>
+            </div>
+            
+            <div class="product-card" data-product-id="4">
+                <div class="product-img">
+                    <img src="https://www.webconsultas.com/sites/default/files/styles/wch_image_schema/public/media/0d/articulos/productos-lacteos.jpg" alt="Lácteos">
+                </div>
+                <div class="product-info">
+                    <h3>Productos Lácteos</h3>
+                    <p>Leche, queso, yogur y mantequilla</p>
+                    <div class="product-price">$10.25</div>
+                    <a href="#" class="btn add-to-cart" data-product-id="4">Agregar al carrito</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -347,5 +380,338 @@
             }, 5000);
         }
     </script>
+    <script>
+    // Configuración
+
+    class CartManager {
+        constructor() {
+            this.cart = [];
+            this.user = null;
+            this.init();
+        }
+
+        init() {
+            this.loadUser();
+            this.loadCart();
+            this.setupEventListeners();
+        }
+
+        loadUser() {
+            const userData = localStorage.getItem('user');
+            if (userData) {
+                this.user = JSON.parse(userData);
+                console.log('👤 Usuario cargado:', this.user);
+            } else {
+                console.log('⚠️ No hay usuario logueado');
+            }
+        }
+
+        async loadCart() {
+            if (!this.user) {
+                console.log('⚠️ No se puede cargar carrito - usuario no logueado');
+                return;
+            }
+            
+            try {
+                console.log('🛒 Cargando carrito para usuario:', this.user.id);
+                const response = await fetch(`${API_URL}/cart/${this.user.id}`);
+                
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    this.cart = data.cart;
+                    this.updateCartUI();
+                    console.log('✅ Carrito cargado:', this.cart);
+                } else {
+                    console.error('❌ Error cargando carrito:', data.message);
+                }
+            } catch (error) {
+                console.error('❌ Error cargando carrito:', error);
+                // Si hay error, inicializar carrito vacío
+                this.cart = [];
+                this.updateCartUI();
+            }
+        }
+
+        setupEventListeners() {
+            // Icono del carrito
+            document.getElementById('cartIcon').addEventListener('click', () => {
+                this.openCart();
+            });
+
+            // Cerrar carrito
+            document.getElementById('closeCart').addEventListener('click', () => {
+                this.closeCart();
+            });
+
+            // Vaciar carrito
+            document.getElementById('clearCart').addEventListener('click', () => {
+                this.clearCart();
+            });
+
+            // Checkout
+            document.getElementById('checkout').addEventListener('click', () => {
+                this.checkout();
+            });
+
+            // Cerrar modal al hacer click fuera
+            document.getElementById('cartModal').addEventListener('click', (e) => {
+                if (e.target.id === 'cartModal') {
+                    this.closeCart();
+                }
+            });
+
+            // Botones "Agregar al carrito"
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('add-to-cart')) {
+                    e.preventDefault();
+                    const productId = e.target.getAttribute('data-product-id');
+                    console.log('🛒 Agregando producto ID:', productId);
+                    this.addToCart(parseInt(productId), 1);
+                }
+            });
+        }
+
+        async addToCart(productId, quantity = 1) {
+            if (!this.user) {
+                alert('⚠️ Debes iniciar sesión para agregar productos al carrito');
+                window.location.href = 'auth.html';
+                return;
+            }
+
+            console.log('🛒 Enviando al servidor:', {
+                userId: this.user.id,
+                productId: productId,
+                quantity: quantity
+            });
+
+            try {
+                const response = await fetch(`${API_URL}/cart/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: this.user.id,
+                        productId: productId,
+                        quantity: quantity
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('📨 Respuesta del servidor:', data);
+                
+                if (data.success) {
+                    this.cart = data.cart;
+                    this.updateCartUI();
+                    this.showNotification('✅ Producto agregado al carrito');
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            } catch (error) {
+                console.error('❌ Error agregando al carrito:', error);
+                alert('Error al agregar producto al carrito: ' + error.message);
+            }
+        }
+
+        async updateQuantity(productId, newQuantity) {
+            if (!this.user) return;
+
+            try {
+                const response = await fetch(`${API_URL}/cart/update`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: this.user.id,
+                        productId: productId,
+                        quantity: newQuantity
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    this.cart = data.cart;
+                    this.updateCartUI();
+                }
+            } catch (error) {
+                console.error('Error actualizando cantidad:', error);
+            }
+        }
+
+        async removeFromCart(productId) {
+            if (!this.user) return;
+
+            try {
+                const response = await fetch(`${API_URL}/cart/remove`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: this.user.id,
+                        productId: productId
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    this.cart = data.cart;
+                    this.updateCartUI();
+                    this.showNotification('🗑️ Producto eliminado del carrito');
+                }
+            } catch (error) {
+                console.error('Error eliminando del carrito:', error);
+            }
+        }
+
+        async clearCart() {
+            if (!this.user || this.cart.length === 0) return;
+
+            if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
+                try {
+                    const response = await fetch(`${API_URL}/cart/clear/${this.user.id}`, {
+                        method: 'DELETE'
+                    });
+
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.cart = [];
+                        this.updateCartUI();
+                        this.showNotification('🛒 Carrito vaciado');
+                    }
+                } catch (error) {
+                    console.error('Error vaciando carrito:', error);
+                }
+            }
+        }
+
+        updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            const cartItems = document.getElementById('cartItems');
+            const emptyCart = document.getElementById('emptyCart');
+
+            // Actualizar contador
+            const totalItems = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            // Actualizar total
+            const total = this.cart.reduce((sum, item) => sum + (item.precio * item.quantity), 0);
+            cartTotal.textContent = total.toFixed(2);
+
+            // Mostrar/ocultar carrito vacío
+            if (this.cart.length === 0) {
+                emptyCart.style.display = 'block';
+                cartItems.innerHTML = '';
+            } else {
+                emptyCart.style.display = 'none';
+                cartItems.innerHTML = this.cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.imagen}" alt="${item.nombre}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.nombre}</div>
+                            <div class="cart-item-price">$${item.precio} c/u</div>
+                        </div>
+                        <div class="cart-item-controls">
+                            <button class="quantity-btn" onclick="cartManager.updateQuantity(${item.productId}, ${item.quantity - 1})">-</button>
+                            <input type="number" class="quantity-input" value="${item.quantity}" min="1" 
+                                   onchange="cartManager.updateQuantity(${item.productId}, parseInt(this.value))">
+                            <button class="quantity-btn" onclick="cartManager.updateQuantity(${item.productId}, ${item.quantity + 1})">+</button>
+                            <button class="remove-item" onclick="cartManager.removeFromCart(${item.productId})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        openCart() {
+            if (!this.user) {
+                alert('⚠️ Debes iniciar sesión para ver el carrito');
+                window.location.href = 'auth.html';
+                return;
+            }
+            document.getElementById('cartModal').style.display = 'block';
+        }
+
+        closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        checkout() {
+            if (this.cart.length === 0) {
+                alert('⚠️ Tu carrito está vacío');
+                return;
+            }
+
+            const total = this.cart.reduce((sum, item) => sum + (item.precio * item.quantity), 0);
+            alert(`🎉 ¡Gracias por tu compra!\nTotal: $${total.toFixed(2)}\n\nTu pedido será procesado pronto.`);
+            this.clearCart();
+            this.closeCart();
+        }
+
+        showNotification(message) {
+            // Crear notificación temporal
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #27ae60;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                z-index: 3000;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+    }
+
+    // Inicializar el carrito cuando la página cargue
+    let cartManager;
+    document.addEventListener('DOMContentLoaded', function() {
+        cartManager = new CartManager();
+        
+        // También actualiza la UI de autenticación
+        updateAuthUI();
+    });
+
+    // Función para actualizar la UI de autenticación (si la tienes)
+    function updateAuthUI() {
+        const user = JSON.parse(localStorage.getItem('user') || 'null');
+        const authButtons = document.getElementById('authButtons');
+        const userMenu = document.getElementById('userMenu');
+        const userName = document.getElementById('userName');
+
+        if (user) {
+            if (userName) userName.textContent = user.nombre;
+            if (authButtons) authButtons.style.display = 'none';
+            if (userMenu) userMenu.style.display = 'block';
+        } else {
+            if (authButtons) authButtons.style.display = 'flex';
+            if (userMenu) userMenu.style.display = 'none';
+        }
+    }
+</script>
 </body>
 </html>
